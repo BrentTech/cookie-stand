@@ -109,6 +109,38 @@ seattleCenter.render();
 
 
 
+//Capitol Hill - 20min 38max 2.3per
+var capitolHill = {
+  storeLocation: 'Capitol Hill',
+  minCustomerPerHour: 20,
+  maxCustomerPerHour: 38,
+  avgCookiesSoldPerCustomer: 2.3,
+  cookiesSoldPerHour: []
+}
+
+capitolHill.avgCustomer = function () {
+  for(var i = 0; i < hoursOfOperation.length; i++) {
+    var cookies = calcAverageCustomerPerHour(this.minCustomerPerHour, this.maxCustomerPerHour) * this.avgCookiesSoldPerCustomer;
+
+    capitolHill.cookiesSoldPerHour.push(Math.floor(cookies));
+  }
+  console.log('Capitol Hill', this.cookiesSoldPerHour);
+}
+
+capitolHill.render = function() {
+  this.avgCustomer();
+
+  var capitolHillUl = document.getElementById('capitol-hill-hourly-projections');
+  for(var i = 0; i < hoursOfOperation.length; i++) {
+    var liEl = document.createElement('li');
+    liEl.textContent = `${hoursOfOperation[i]}: ${capitolHill.cookiesSoldPerHour[i]} cookies.`;
+    capitolHillUl.appendChild(liEl);
+
+  }
+}
+
+capitolHill.render();
+
+
 
 //Alki - 2min 16max 4.6per
-
