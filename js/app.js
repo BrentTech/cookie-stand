@@ -8,6 +8,8 @@ function calcAverageCustomerPerHour (minCustomer, maxCustomer) {
   return Math.random() * (maxCustomer - minCustomer + 1) + minCustomer;
 }
 
+
+
 //1st and Pike store location
 var firstAndPike = {
   storeLocation: '1st & Pike',
@@ -39,6 +41,8 @@ firstAndPike.render = function () {
 
 firstAndPike.render();
 
+
+
 //seatac store location
 var seatac = {
   storeLocation: 'SeaTac',
@@ -69,4 +73,42 @@ seatac.render = function () {
 }
 
 seatac.render();
+
+
+
+// Seattle Center store location
+var seattleCenter = {
+  storeLocation: 'Seattle Center',
+  minCustomerPerHour: 11,
+  maxCustomerPerHour: 38,
+  avgCookiesSoldPerCustomer: 3.7,
+  cookiesSoldPerHour: []
+}
+
+seattleCenter.avgCustomer = function () {
+  for(var i = 0; i < hoursOfOperation.length; i++) {
+    var cookies = calcAverageCustomerPerHour(this.minCustomerPerHour, this.maxCustomerPerHour) * this.avgCookiesSoldPerCustomer;
+
+    seattleCenter.cookiesSoldPerHour.push(Math.floor(cookies));
+  }
+  console.log('Seattle Center', this.cookiesSoldPerHour);
+}
+
+seattleCenter.render = function () {
+  this.avgCustomer();
+
+  var seattleCenterUl = document.getElementById('seattle-center-hourly-projections');
+  for(var i = 0; i < hoursOfOperation.length; i++) {
+    var liEl = document.createElement('li');
+    liEl.textContent = `${hoursOfOperation[i]}: ${this.cookiesSoldPerHour[i]} cookies.`
+    seattleCenterUl.appendChild(liEl);
+  }
+}
+
+seattleCenter.render();
+
+
+
+
+//Alki - 2min 16max 4.6per
 
