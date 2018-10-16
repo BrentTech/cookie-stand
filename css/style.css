@@ -16,7 +16,15 @@ ul{
   margin: 10px;
 }
 
-td{
+td, th{
   border: 1px black solid;
   padding: 5px;
+}
+
+th {
+  background-color: aquamarine;
+}
+
+td:nth-child(1) {
+  background-color: aquamarine;
 }

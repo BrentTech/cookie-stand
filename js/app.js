@@ -116,8 +116,32 @@ SalmonStand.prototype.render = function () {
   tdEl = document.createElement('td');
   tdEl.textContent = this.cookiesSoldPerHour[13];
   trEl.appendChild(tdEl);
+  
+  var tdEl = document.createElement('td');
+  tdEl.textContent = this.dailyTotal;
+  trEl.appendChild(tdEl);
 
   storeCookiesSalesTable.appendChild(trEl);
+}
+
+function makeHeaderRow() {
+  var trEl = document.createElement('tr');
+
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Store Location';
+  trEl.appendChild(thEl);
+
+  for (let i = 0; i< hoursOfOperation.length; i++) {
+    thEl = document.createElement('th');
+    thEl.textContent = hoursOfOperation[i];
+    trEl.appendChild(thEl);
+
+    storeCookiesSalesTable.appendChild(trEl);
+  }
+
+  thEl = document.createElement('th');
+  thEl.textContent = 'Total';
+  trEl.appendChild(thEl);
 }
 
 function renderAllStores() {
@@ -126,5 +150,6 @@ function renderAllStores() {
   }
 }
 
+makeHeaderRow();
 renderAllStores();
 
