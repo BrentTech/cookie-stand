@@ -144,3 +144,33 @@ capitolHill.render();
 
 
 //Alki - 2min 16max 4.6per
+var alki = {
+  storeLocation: 'Alki',
+  minCustomerPerHour: 2,
+  maxCustomerPerHour: 16,
+  avgCookiesSoldPerCustomer: 4.6,
+  cookiesSoldPerHour: []
+}
+
+alki.avgCustomer = function () {
+  for(var i = 0; i < hoursOfOperation.length; i++) {
+    var cookies = calcAverageCustomerPerHour(this.minCustomerPerHour, this.maxCustomerPerHour) * this.avgCookiesSoldPerCustomer;
+
+    alki.cookiesSoldPerHour.push(Math.floor(cookies));
+  }
+  console.log('Alki', this.cookiesSoldPerHour);
+}
+
+alki.render = function() {
+  this.avgCustomer();
+
+  var alkiUl = document.getElementById('alki-hourly-projections');
+  for(var i = 0; i < hoursOfOperation.length; i++) {
+    var liEl = document.createElement('li');
+    liEl.textContent = `${hoursOfOperation[i]}: ${alki.cookiesSoldPerHour[i]} cookies.`;
+    alkiUl.appendChild(liEl);
+
+  }
+}
+
+alki.render();
