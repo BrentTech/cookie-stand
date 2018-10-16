@@ -9,14 +9,14 @@ function calcAverageCustomerPerHour (minCustomer, maxCustomer) {
 }
 
 
-
 //1st and Pike store location
 var firstAndPike = {
   storeLocation: '1st & Pike',
   minCustomerPerHour: 23,
   maxCustomerPerHour: 65,
   avgCookiesSoldPerCustomer: 6.3,
-  cookiesSoldPerHour: []
+  cookiesSoldPerHour: [],
+  dailyTotal: ''
 }
 
 firstAndPike.avgCustomer = function () {
@@ -27,6 +27,22 @@ firstAndPike.avgCustomer = function () {
   }
   console.log('1st and Pike', this.cookiesSoldPerHour);
 }
+
+
+// total feature work in progress
+
+// firstAndPike.sumTotal = function () {
+//   for(var i = 0; i < hoursOfOperation.length; i++) {
+//     //sum of first two numbers carried over
+//     //add new number to that i+2?
+
+//     var initialSum = this.cookiesSoldPerHour[1] + this.cookiesSoldPerHour[2];
+//     var dailySum = initialSum + this.cookiesSoldPerHour[i+2];
+  
+//   }
+//   console.log(firstAndPike.sumTotal;
+// }
+
 
 firstAndPike.render = function () {
   this.avgCustomer();
@@ -109,7 +125,7 @@ seattleCenter.render();
 
 
 
-//Capitol Hill - 20min 38max 2.3per
+//Capitol Hill store location
 var capitolHill = {
   storeLocation: 'Capitol Hill',
   minCustomerPerHour: 20,
@@ -143,7 +159,7 @@ capitolHill.render();
 
 
 
-//Alki - 2min 16max 4.6per
+//Alki store location
 var alki = {
   storeLocation: 'Alki',
   minCustomerPerHour: 2,
