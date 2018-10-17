@@ -9,7 +9,26 @@
 
 <body>
   <h1>Salmon Cookie Daily Sales Projections By Store</h1>
+  <form id="new-store-form">
+    <fieldset>
+      <legend>Add a New Store</legend>
 
+        <label for="location" >Location</label>
+        <input name="location" type="text" />
+
+        <label for="min-customers">Minimum Projected Customers</label>
+        <input name="min-customers" type="text" />
+      
+        <label for="max-customers">Maximum Projected Customers</label>
+        <input name="max-customers" type="text" />
+      
+        <label for="avg-cookie-sale">Projected Sale Per Customer</label> 
+        <input name="avg-cookie-sale" type="text" />
+
+        <button type="submit">Calculate Store Needs</button>
+    </fieldset>
+  </form>
+  <h2>Projections For Today</h2>
   <table id="store-sales-projection-table">
 
   </table>
