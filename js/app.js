@@ -44,6 +44,20 @@ SalmonStand.prototype.calcAvgCookiesPerHour = function() {
   // console.log(this.cookiesSoldPerHour)
 }
 
+// SalmonStand.prototype.calcHourlyTotals = function() {
+//   //variable for totals reset to 0
+//   //loop to cycle through stores
+//   //loop to cycle through hours
+//   var totalPerHour = 0
+//   for(var i = 0; i < hoursOfOperation.length; i++) {
+
+//     for(var j = 0; allStoreLocations.length; i++) {
+//       totalPerHour += 
+//     }
+//   }
+// }
+
+
 //use constructor to instantiate stores
 
 new SalmonStand('1st and Pike', 23, 65, 6.3);
@@ -61,62 +75,14 @@ SalmonStand.prototype.render = function () {
   tdEl.textContent = this.storeLocation;
   trEl.appendChild(tdEl);
 
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[0];
-  trEl.appendChild(tdEl);
+  for(var i = 0; i < hoursOfOperation.length; i++) {
+    tdEl = document.createElement('td');
+    tdEl.textContent = this.cookiesSoldPerHour[i];
+    trEl.appendChild(tdEl);
 
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[1];
-  trEl.appendChild(tdEl);
+    storeCookiesSalesTable.appendChild(trEl);
+  }
 
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[2];
-  trEl.appendChild(tdEl);
-  
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[3];
-  trEl.appendChild(tdEl);
-  
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[4];
-  trEl.appendChild(tdEl);
-  
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[5];
-  trEl.appendChild(tdEl);
-  
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[6];
-  trEl.appendChild(tdEl);
-  
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[7];
-  trEl.appendChild(tdEl);
-  
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[8];
-  trEl.appendChild(tdEl);
-
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[9];
-  trEl.appendChild(tdEl);
-
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[10];
-  trEl.appendChild(tdEl);
-  
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[11];
-  trEl.appendChild(tdEl);
-  
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[12];
-  trEl.appendChild(tdEl);
-  
-  tdEl = document.createElement('td');
-  tdEl.textContent = this.cookiesSoldPerHour[13];
-  trEl.appendChild(tdEl);
-  
   var tdEl = document.createElement('td');
   tdEl.textContent = this.dailyTotal;
   trEl.appendChild(tdEl);
@@ -131,7 +97,7 @@ function makeHeaderRow() {
   thEl.textContent = 'Store Location';
   trEl.appendChild(thEl);
 
-  for (let i = 0; i< hoursOfOperation.length; i++) {
+  for (var i = 0; i< hoursOfOperation.length; i++) {
     thEl = document.createElement('th');
     thEl.textContent = hoursOfOperation[i];
     trEl.appendChild(thEl);
