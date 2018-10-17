@@ -10,16 +10,22 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; // from MDN docs
 }
 
+function newElement(type, content, parent) {
+  var element = document.createElement(type);
+  element.textContent = content;
+  parent.appendChild(element);
+}
+
 // build constructor function
 function SalmonStand(storeLocation, minCustomerPerHour, maxCustomerPerHour, avgCookiesSoldPerCustomer) {
   this.storeLocation = storeLocation;
   this.minCustomerPerHour = minCustomerPerHour;
   this.maxCustomerPerHour = maxCustomerPerHour;
   this.avgCookiesSoldPerCustomer = avgCookiesSoldPerCustomer;
-  this.avgCustomerPerHour = [],
+  this.avgCustomerPerHour = [];
   this.cookiesSoldPerHour = [];
-  this.dailyTotal = 0
-  allStoreLocations.push(this)
+  this.dailyTotal = 0;
+  allStoreLocations.push(this);
 }
 
 //prototype for calc avg customer per hour
@@ -29,7 +35,6 @@ SalmonStand.prototype.calcAvgCustomerPerHour = function () {
     
     this.avgCustomerPerHour.push(randomCustomer);
   }
-  // console.log(this.avgCustomerPerHour)
 }
 
 //prototype for calc cookies per hour
@@ -41,7 +46,6 @@ SalmonStand.prototype.calcAvgCookiesPerHour = function() {
     this.cookiesSoldPerHour.push(hourlyCookies);
     this.dailyTotal += hourlyCookies;
   }
-  // console.log(this.cookiesSoldPerHour)
 }
 
 // SalmonStand.prototype.calcHourlyTotals = function() {
@@ -66,48 +70,32 @@ new SalmonStand('Seattle Center', 11, 38, 3.7);
 new SalmonStand('Capitol Hill', 20, 38, 2.3);
 new SalmonStand('Alki', 2, 16, 4.6);
 
+
 SalmonStand.prototype.render = function () {
   this.calcAvgCookiesPerHour();
-
   var trEl = document.createElement('tr');
-
-  var tdEl = document.createElement('td');
-  tdEl.textContent = this.storeLocation;
-  trEl.appendChild(tdEl);
+  newElement('td', this.storeLocation, trEl);
 
   for(var i = 0; i < hoursOfOperation.length; i++) {
-    tdEl = document.createElement('td');
-    tdEl.textContent = this.cookiesSoldPerHour[i];
-    trEl.appendChild(tdEl);
-
+    newElement('td', this.cookiesSoldPerHour[i], trEl);
     storeCookiesSalesTable.appendChild(trEl);
   }
 
-  var tdEl = document.createElement('td');
-  tdEl.textContent = this.dailyTotal;
-  trEl.appendChild(tdEl);
-
+  newElement('td', this.dailyTotal, trEl);
   storeCookiesSalesTable.appendChild(trEl);
 }
 
+// can these be self calling?
 function makeHeaderRow() {
   var trEl = document.createElement('tr');
-
-  var thEl = document.createElement('th');
-  thEl.textContent = 'Store Location';
-  trEl.appendChild(thEl);
+  newElement('th', 'Store Location', trEl);
 
   for (var i = 0; i< hoursOfOperation.length; i++) {
-    thEl = document.createElement('th');
-    thEl.textContent = hoursOfOperation[i];
-    trEl.appendChild(thEl);
-
+    newElement('th', hoursOfOperation[i], trEl);
     storeCookiesSalesTable.appendChild(trEl);
   }
 
-  thEl = document.createElement('th');
-  thEl.textContent = 'Total';
-  trEl.appendChild(thEl);
+  newElement('th', 'Total', trEl);
 }
 
 function renderAllStores() {
@@ -118,4 +106,3 @@ function renderAllStores() {
 
 makeHeaderRow();
 renderAllStores();
-
