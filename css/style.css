@@ -1,6 +1,8 @@
 body{
   font-size: 100%;
   margin: 15px;
+  background-color: bisque;
+  color: rgb(71, 50, 23);
 }
 
 h1{
