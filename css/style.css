@@ -1,32 +1,50 @@
 body{
+  width: 900px;
   font-size: 100%;
   margin: 15px;
   background-color: bisque;
   color: rgb(71, 50, 23);
+  margin: 20px auto;
+  line-height: 1.4em;
 }
 
 h1{
   font-size: 140%;
+  margin: 10px auto;
 }
 
 h2{
   font-size: 120%;
 }
 
-ul{
-  list-style-type: circle;
-  margin: 10px;
-}
+table {}
 
 td, th{
   border: 1px black solid;
   padding: 5px;
+  margin: auto;
 }
 
 th {
   background-color: aquamarine;
+  font-weight: bold
+}
+
+th:last-of-type {
+  font-size: 130%;
+}
+
+th:first-of-type {
+  font-size: 130%;
 }
 
 td:nth-child(1) {
   background-color: aquamarine;
+  font-weight: bold;
+  text-align: right;
+  padding: 8px 5px 8px 5px;
+}
+
+td:last-of-type {
+  b
 }
