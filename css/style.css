@@ -1,6 +1,8 @@
 body{
   font-size: 100%;
   margin: 15px;
+  background-color: bisque;
+  color: rgb(71, 50, 23);
 }
 
 h1{
@@ -14,4 +16,17 @@ h2{
 ul{
   list-style-type: circle;
   margin: 10px;
+}
+
+td, th{
+  border: 1px black solid;
+  padding: 5px;
+}
+
+th {
+  background-color: aquamarine;
+}
+
+td:nth-child(1) {
+  background-color: aquamarine;
 }
