@@ -7,7 +7,6 @@ var storeCookiesSalesTable = document.getElementById('store-sales-projection-tab
 var newStoreForm = document.getElementById('new-store-form');
 var footer;
 
-
 function SalmonStand(storeLocation, minCustomerPerHour, maxCustomerPerHour, avgCookiesSoldPerCustomer) {
   this.storeLocation = storeLocation;
   this.minCustomerPerHour = minCustomerPerHour;
@@ -57,7 +56,6 @@ new SalmonStand('SeaTac', 3, 24, 1.2);
 new SalmonStand('Seattle Center', 11, 38, 3.7);
 new SalmonStand('Capitol Hill', 20, 38, 2.3);
 new SalmonStand('Alki', 2, 16, 4.6);
-
 
 //+++++++++++++++++++++ Function Declarations +++++++++++++++++++++++++++
 function random(min, max) {
@@ -112,7 +110,7 @@ function handleStoreLocationSubmit(event) {
   var avgSale = Number(event.target.avgCookieSale.value);
   
   if (isNaN(avgSale)) {
-    return alert('Please the average number of cookies sold per customer.');
+    return alert('Please input the average number of cookies sold per customer.');
   }
 
   new SalmonStand(location, minCust, maxCust, avgSale);
@@ -141,19 +139,10 @@ function hourlyTotals() {
   return workingTotals;
 }
 
-// function reCalcFooter() {
-//   footer.innerhtml = '';
-
-// }
-
-
-
 //+++++++++++++++++++++ Exicutables +++++++++++++++++++++++++++
 newStoreForm.addEventListener('submit', handleStoreLocationSubmit);
 
 makeHeaderRow();
-
 renderAllStores();
 makeFooterRow();
-console.log(footer, 'this is the footer');
 //+++++++++++++++++++++ WIP +++++++++++++++++++++++++
