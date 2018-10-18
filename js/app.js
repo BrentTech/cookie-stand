@@ -133,8 +133,8 @@ function handleStoreLocationSubmit(event) {
 
 function handleCalculateHourlyTotals(event) {
   event.preventDefault();
-  if (footer = true) {
-    footer;
+  if (footer == true) {
+    footer.remove();
   } else {
     makeFooterRow();
   }
