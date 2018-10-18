@@ -5,6 +5,8 @@ var hoursOfOperation = ['06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '1
 var allStoreLocations = [];
 var storeCookiesSalesTable = document.getElementById('store-sales-projection-table');
 var newStoreForm = document.getElementById('new-store-form');
+var calculateFooter = document.getElementById('calculate');
+var footer = document.getElementsByTagName('store-sales-projection-table').lastChild;
 
 
 function SalmonStand(storeLocation, minCustomerPerHour, maxCustomerPerHour, avgCookiesSoldPerCustomer) {
@@ -16,7 +18,7 @@ function SalmonStand(storeLocation, minCustomerPerHour, maxCustomerPerHour, avgC
   this.cookiesSoldPerHour = [];
   this.dailyTotal = 0;
 
-  allStoreLocations.push(this);
+  allStoreLocations.unshift(this);
 }
 
 SalmonStand.prototype.calcAvgCustomerPerHour = function () {
@@ -82,10 +84,9 @@ function makeHeaderRow() {
 }
 
 function makeFooterRow() {
-  var trEl = document.createElement('tr');
+  var tfootEl = document.createElement('tfoot');
   var hourlyTotals = [];
 
-  // self-invoking function to calculate footer row totals
   for(var i = 0; i < hoursOfOperation.length; i++) {
     var total = 0;
 
@@ -95,21 +96,21 @@ function makeFooterRow() {
     hourlyTotals.push(total);
   }
     
-  newElement('td', 'Hourly Total', trEl);
+  newElement('td', 'Hourly Total', tfootEl);
 
   for (var i = 0; i< hoursOfOperation.length; i++) {
-    newElement('td', hourlyTotals[i], trEl);
-    storeCookiesSalesTable.appendChild(trEl);
+    newElement('td', hourlyTotals[i], tfootEl);
+    storeCookiesSalesTable.appendChild(tfootEl);
   }
 
-  newElement('th', 'Total', trEl);
+  newElement('td', '', tfootEl);
 }
 
 function renderAllStores() {
   for (var i = 0; i < allStoreLocations.length; i++) {
     allStoreLocations[i].render();
   }
-}
+} 
 
 function handleStoreLocationSubmit(event) {
   event.preventDefault();
@@ -118,21 +119,33 @@ function handleStoreLocationSubmit(event) {
   var minCust = event.target.minCustomers.value;
   var maxCust = event.target.maxCustomers.value;
   var avgSale = event.target.avgCookieSale.value;
-
+  
   new SalmonStand(location, minCust, maxCust, avgSale);
+  
 
   event.target.storeLocation.value = null;
   event.target.minCustomers.value = null;
   event.target.maxCustomers.value = null;
   event.target.avgCookieSale.value = null;
 
-  allStoreLocations.slice(-1)[0].render();
-  makeFooterRow();
+  allStoreLocations[0].render();
 }
+
+function handleCalculateHourlyTotals(event) {
+  event.preventDefault();
+  if (footer = true) {
+    footer;
+  } else {
+    makeFooterRow();
+  }
+}
+
+
 //+++++++++++++++++++++ Exicutables +++++++++++++++++++++++++++
 newStoreForm.addEventListener('submit', handleStoreLocationSubmit);
+calculateFooter.addEventListener('click', handleCalculateHourlyTotals);
 
 makeHeaderRow();
 renderAllStores();
-makeFooterRow();
+// makeFooterRow();
 //+++++++++++++++++++++ WIP +++++++++++++++++++++++++
