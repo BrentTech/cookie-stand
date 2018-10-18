@@ -128,14 +128,15 @@ function handleStoreLocationSubmit(event) {
   event.target.maxCustomers.value = null;
   event.target.avgCookieSale.value = null;
 
+  // footer.remove();
   allStoreLocations[0].render();
+  reCalcFooter();
 }
 
-function handleCalculateHourlyTotals(event) {
+function reCalcFooter() {
   event.preventDefault();
   if (footer == true) {
     footer.remove();
-  } else {
     makeFooterRow();
   }
 }
@@ -143,9 +144,9 @@ function handleCalculateHourlyTotals(event) {
 
 //+++++++++++++++++++++ Exicutables +++++++++++++++++++++++++++
 newStoreForm.addEventListener('submit', handleStoreLocationSubmit);
-calculateFooter.addEventListener('click', handleCalculateHourlyTotals);
+// calculateFooter.addEventListener('click', handleCalculateHourlyTotals);
 
 makeHeaderRow();
 renderAllStores();
-// makeFooterRow();
+makeFooterRow();
 //+++++++++++++++++++++ WIP +++++++++++++++++++++++++
