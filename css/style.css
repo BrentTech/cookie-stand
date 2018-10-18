@@ -17,7 +17,8 @@ h2{
   font-size: 120%;
 }
 
-table {}
+/* table {
+} */
 
 td, th{
   border: 1px black solid;
@@ -45,6 +46,8 @@ td:nth-child(1) {
   padding: 8px 5px 8px 5px;
 }
 
-td:last-of-type {
-  b
-}
+/* td:last-of-type {
+} */
+
+/* tfoot {
+} */
