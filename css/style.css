@@ -12,3 +12,80 @@ td:nth-child(1) {
   text-align: right;
   padding: 8px 5px 8px 5px;
 } */
+* {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(78, 50, 31);
+}
+body {
+  background-color: #b5ffdd;
+  width: 960px;
+  margin: 0px auto;
+}
+header {
+  width: 960px;
+  text-align: center;
+  background-color: #fff48d;
+  margin: 0px auto;
+}
+main {
+  background-color: #fff48d;
+  width: 960px;
+  margin: 0px auto;
+}
+
+h1 {
+  font-family: 'Amita', cursive;
+  font-size: 55px;
+  padding: 30px;
+  margin-bottom: 5px;
+  height: 50px;
+  background-color: #fff48d;
+}
+
+h2 {
+  font-family: 'Amita', cursive;
+  font-size: 18pt;
+}
+
+#salmon-logo {
+  height: 60px;
+  width: auto;
+  display: inline-block;
+  float: left;
+}
+
+.navigation {
+  background-color: #95e8a0;
+  /* text-align: center; */
+  border-radius: 10%;
+  font-size: 20pt;
+  height: auto;
+  width: 130px;
+  display: inline-block;
+  margin: 10px 40px;
+  padding: 10px;
+}
+
+ul.address-table {
+  display: inline-block;
+  background-color: #95e8a0;
+  border-radius: 10%;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 24px;
+}
+
+nav {
+  background-color: #fff48d;
+}
+
+img.testimonial-img {
+  width: 200px;
+  display: inline;
+  float: left;
+}
+
+#testimonial-section {
+  text-align: center;
+  
+}

@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 
+<html>
 <head>
-  <title>Salmon Cookies - Even Greater Than Sliced Bread</title>
+  <title>Salmon Kookies - Even Greater Than Sliced Bread</title>
 
   <link rel="stylesheet" type="text/css" href="css/reset.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Amita" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Salmon Cookie Daily Sales Projections By Store</h1>
-  <form id="new-store-form">
-    <fieldset>
-      <legend>Add a New Store</legend>
+  <header>
+    <h1>Pat's Kookies</h1>
+    <nav>
+      <img id="salmon-logo" src="" title="Pat's Salmon Kookie logo" alt="Pat's Salmon Kookie">
+      <ul>
+        <li class="navigation">Home</li>
+        <li class="navigation">About Us</li>
+        <li class="navigation" id="secret-admin"></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <Main>
+    <section>
+      <form id="new-store-form">
+        <fieldset>
+          <legend>Add New Store</legend>
 
-        <label for="storeLocation" >Location</label>
-        <input name="storeLocation" type="text" required />
+            <label for="storeLocation" >Location</label>
+            <input name="storeLocation" type="text" required />
 
-        <label for="minCustomers">Minimum Projected Customers</label>
-        <input name="minCustomers" type="number" required />
-      
-        <label for="maxCustomers">Maximum Projected Customers</label>
-        <input name="maxCustomers" type="number" required />
-      
-        <label for="avgCookieSale">Projected Sale Per Customer</label> 
-        <input name="avgCookieSale" type="text" required/>
+            <label for="minCustomers">Minimum Projected Customers</label>
+            <input name="minCustomers" type="number" required />
+          
+            <label for="maxCustomers">Maximum Projected Customers</label>
+            <input name="maxCustomers" type="number" required />
+          
+            <label for="avgCookieSale">Projected Sale Per Customer</label> 
+            <input name="avgCookieSale" type="text" required/>
 
-        <button type="submit">Add Store</button>
-        <!-- <button type="button" id="calculate">Calulate Hourly Averages</button> -->
-    </fieldset>
-  </form>
-
-  <h2>Projections For Today</h2>
-  <table id="store-sales-projection-table"></table>
-
+            <button type="submit">Add Store</button>
+        </fieldset>
+      </form>
+    <h2>Projections For Today</h2>
+    <table id="store-sales-projection-table"></table>
+    </section>
+  </Main>
 
   <script type="text/javascript" src="js/app.js"></script>
 </body>
+</html>

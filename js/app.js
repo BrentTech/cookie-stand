@@ -141,11 +141,6 @@ function hourlyTotals() {
   return workingTotals;
 }
 
-// function reCalcFooter() {
-//   footer.innerhtml = '';
-
-// }
-
 
 
 //+++++++++++++++++++++ Exicutables +++++++++++++++++++++++++++
