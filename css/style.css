@@ -87,5 +87,10 @@ img.testimonial-img {
 
 #testimonial-section {
   text-align: center;
-  
+}
+
+#store-sales-projection-table td {
+  margin: 10px;
+  padding: 10px;
+
 }
