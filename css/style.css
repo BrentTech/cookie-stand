@@ -1,26 +1,40 @@
 * {
   font-family: 'Times New Roman', Times, serif;
   color: rgb(78, 50, 31);
+  line-height: 150%;
 }
 
 body {
-  background-color: #b5ffdd;
-  width: 960px;
-  margin: 0px auto;
+  background: #fff48d;
 }
 
 header {
   width: 960px;
   text-align: center;
   background-color: #fff48d;
-  margin: 0px auto;
+  margin: 0px auto 30px auto;
+  border-bottom: 10px ridge #95e8a0;
 }
 
 main {
   background-color: #fff48d;
   width: 960px;
-  margin: 0px auto;
+  margin: 0px auto 30px auto;
 }
+
+main div {
+  margin: 0px auto 30px auto;
+  width: 650px;
+}
+
+p {
+  font-size: 18px;
+}
+
+main section {
+  margin-bottom: 30px;
+}
+
 
 h1 {
   font-family: 'Amita', cursive;
@@ -34,6 +48,8 @@ h1 {
 h2 {
   font-family: 'Amita', cursive;
   font-size: 18pt;
+  text-indent: 15px;
+  margin-bottom: 15px;
 }
 
 nav img {
@@ -49,7 +65,7 @@ header ul li {
   border-radius: 10px;
   font-size: 20pt;
   height: auto;
-  width: 130px;
+  width: 115px;
   display: inline-block;
   margin: 10px 40px;
   padding: 10px;
@@ -58,7 +74,7 @@ header ul li {
 ul.address-table {
   display: inline-block;
   background-color: #95e8a0;
-  border-radius: 10%;
+  border-radius: 10px;
   text-align: left;
   padding: 10px;
   margin: 10px 24px;
@@ -66,19 +82,16 @@ ul.address-table {
 
 nav {
   background-color: #fff48d;
+  margin-left: 60px;
+  margin-bottom: 10px;
 }
 
-img.testimonial-img {
-  width: 200px;
-  display: inline;
-  float: left;
+main img {
+  width: 150px;
+  border-radius: 20px;
 }
-
-#testimonial-section {
-  text-align: center;
-}
-
+/* 
 #store-sales-projection-table td {
   margin: 10px;
   padding: 10px;
-}
+} */
