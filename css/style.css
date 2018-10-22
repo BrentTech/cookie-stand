@@ -77,6 +77,13 @@ h2 {
   font-family: 'Amita', cursive;
   font-size: 18pt;
   text-indent: 15px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-family: 'Amita', cursive;
+  font-size: 12pt;
+  text-indent: 25px;
   margin-bottom: 25px;
 }
 
